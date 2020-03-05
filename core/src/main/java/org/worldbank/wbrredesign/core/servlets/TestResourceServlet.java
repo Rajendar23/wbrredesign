@@ -1,0 +1,49 @@
+package org.worldbank.wbrredesign.core.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.servlets.HttpConstants;
+import org.apache.sling.api.servlets.ServletResolverConstants;
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.osgi.framework.Constants;
+import org.osgi.service.component.annotations.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.google.gson.JsonObject;
+
+@SuppressWarnings("serial")
+@Component(service = Servlet.class, immediate = true, property = {
+		Constants.SERVICE_DESCRIPTION + "=Test Resource Servlet",
+		ServletResolverConstants.SLING_SERVLET_METHODS + "=" + HttpConstants.METHOD_GET,
+		ServletResolverConstants.SLING_SERVLET_SELECTORS + "=" + "test",
+		ServletResolverConstants.SLING_SERVLET_EXTENSIONS + "=" + "json",
+		ServletResolverConstants.SLING_SERVLET_RESOURCE_TYPES + "=" + "sling/servlet/default" })
+public class TestResourceServlet extends SlingAllMethodsServlet {
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	@Override
+	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
+			throws ServletException, IOException {
+		logger.info("Test Resource Servlet");
+		try {
+			Resource resource = request.getResource();
+			logger.info(resource.getPath());
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("application/json");
+
+			JsonObject jsonObject = new JsonObject();
+			jsonObject.addProperty("name", "rajendar");
+
+			response.getWriter().write(jsonObject.toString());
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+	}
+}

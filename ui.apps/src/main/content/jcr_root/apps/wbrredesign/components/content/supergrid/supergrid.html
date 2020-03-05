@@ -1,0 +1,15 @@
+<div
+	data-sly-use.supergrid="org.worldbank.wbrredesign.core.models.SuperGrid"
+	data-sly-test.hasSupergrid="${supergrid.container && supergrid.containerClass}"
+	data-sly-unwrap>
+	<div class="${supergrid.containerClass}"
+		style="padding: ${ supergrid.paddingTop @ context='styleString'}px 0px ${ supergrid.paddingBottom @ context='styleString'}px 0px; background-color: ${ supergrid.color @ context='styleString'}">
+		<div class="${supergrid.container}">
+			<div
+				data-sly-resource="${'par'
+		@ resourceType='wcm/foundation/components/parsys'}"></div>
+		</div>
+	</div>
+</div>
+
+

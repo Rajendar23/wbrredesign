@@ -1,0 +1,32 @@
+<sly data-sly-use.tabs="org.worldbank.wbrredesign.core.models.Tabs" />
+
+<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+	class="cq-placeholder cq-marker-start" data-emptytext="Tabs"></div>
+
+<section>
+	<tab> <tab-nav>
+	<div class="_loop_wrapper">
+		<div class="_loop_scroller _loop_scroller-left">&laquo;</div>
+		<div class="_loop_scroller _loop_scroller-right">&raquo;</div>
+		<ul class="_loop_list">
+			<li data-sly-repeat.tab="${tabs.tabs}"><a
+				class="${tabList.first ? '_loop_tab_active' : ''}"
+				href="#${tabs.tabs[tab]}">${tab}</a></li>
+		</ul>
+	</div>
+	</tab-nav> <tab-content>
+	<ul class="_loop_tab_content_list" id="context">
+		<li data-sly-repeat.tab="${tabs.tabs}"
+			class="${tabList.first ? '_loop_tab_active' : ''}">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					${tabList.count}
+					<div
+						data-sly-resource="${ 'tab{0}' @ format=tabList.count,
+						resourceType='wcm/foundation/components/parsys'}"></div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	</tab-content> </tab>
+</section>

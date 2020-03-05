@@ -1,0 +1,28 @@
+<sly
+	data-sly-use.title="org.worldbank.wbrredesign.core.models.RedesignTitle"></sly>
+
+<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+	class="cq-placeholder cq-marker-start" data-emptytext="Redesign Title"></div>
+
+<div class="row">
+	<div class="heading-v1">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h1 style="color: ${ title.textColor @ context='styleString'}"
+				data-sly-element="${title.headerFont}">${title.header}</h1>
+		</div>
+	</div>
+</div>
+
+<!-- <button>Get External Content</button>
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			$.ajax({
+				url : "/bin/test",
+				success : function(result) {
+					console.log(result);
+				}
+			});
+		});
+	});
+</script> -->

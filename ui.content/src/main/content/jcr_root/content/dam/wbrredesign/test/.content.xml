@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="3ab05c28-5b5a-4323-a483-c1f8bc1893ee">
+    <jcr:content
+        cq:name="test"
+        cq:parentPath="/content/dam/wbrredesign"
+        jcr:description=""
+        jcr:lastModified="{Date}2019-11-18T10:07:00.092+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Test"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2019-11-18T10:07:00.093+05:30">
+        <data
+            cq:model="/conf/wbrredesign/settings/dam/cfm/models/test-model"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:primaryType="nt:unstructured"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2019-11-18T10:06:59.976+05:30"
+                imagepath_x0040_LastModified="{Date}2019-11-18T10:06:59.977+05:30"
+                name="raj"
+                name_x0040_LastModified="{Date}2019-11-18T10:06:59.976+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

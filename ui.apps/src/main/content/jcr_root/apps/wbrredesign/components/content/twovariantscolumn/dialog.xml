@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Two Column Control Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <General
+                jcr:primaryType="cq:Panel"
+                title="Two Column Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <desktopColumns
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Desktop Columns"
+                        name="./desktopColumns"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <EightByFour
+                                jcr:primaryType="nt:unstructured"
+                                text="8,4"
+                                value="8,4"/>
+                            <FourByEight
+                                jcr:primaryType="nt:unstructured"
+                                text="4,8"
+                                value="4,8"/>
+                            <ThreeByNine
+                                jcr:primaryType="nt:unstructured"
+                                text="3,9"
+                                value="3,9"/>
+                            <NineByThree
+                                jcr:primaryType="nt:unstructured"
+                                text="9,3"
+                                value="9,3"/>
+                            <TwoByTen
+                                jcr:primaryType="nt:unstructured"
+                                text="2,10"
+                                value="2,10"/>
+                        </options>
+                    </desktopColumns>
+                    <tabletColumns
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Tablet Columns"
+                        name="./tabletColumns"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <EightByFour
+                                jcr:primaryType="nt:unstructured"
+                                text="8,4"
+                                value="8,4"/>
+                            <FourByEight
+                                jcr:primaryType="nt:unstructured"
+                                text="4,8"
+                                value="4,8"/>
+                            <ThreeByNine
+                                jcr:primaryType="nt:unstructured"
+                                text="3,9"
+                                value="3,9"/>
+                            <NineByThree
+                                jcr:primaryType="nt:unstructured"
+                                text="9,3"
+                                value="9,3"/>
+                            <TwoByTen
+                                jcr:primaryType="nt:unstructured"
+                                text="2,10"
+                                value="2,10"/>
+                        </options>
+                    </tabletColumns>
+                </items>
+            </General>
+        </items>
+    </items>
+</jcr:root>

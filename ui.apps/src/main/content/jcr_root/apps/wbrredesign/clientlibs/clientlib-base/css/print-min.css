@@ -1,0 +1,90 @@
+@media print {
+	html {
+		background-color: #fff !important;
+		-webkit-print-color-adjust: exact;
+		margin: 4px;
+	}
+	body {
+		-webkit-print-color-adjust: exact;
+		margin: 0px;
+	}
+	@page {
+		size: landscape;
+	}
+	.container {
+		width: auto;
+		min-width: 1170px;
+	}
+	.img-gradient {
+		display: none !important;
+	}
+	.hero-title, .hero-description {
+		color: #fff !important;
+	}
+	.navbar {
+		display: block;
+		border-width: 0 !important;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+	a[href]:after {
+		content: none !important;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-size: 65%;
+	}
+	.annualmeeting_bubble_chart {
+		display: inline-block;
+	}
+	#annualmeeting_bubblechart .hidden-xs {
+		display: block !important;
+	}
+	#annualmeeting_bubblechart #bubbleChart-mobile,
+		#annualmeeting_bubblechart #eventType, #annualmeeting_bubblechart .k-scheduler-tools,
+		#annualmeeting_bubblechart .export_print {
+		display: none !important;
+	}
+	#annualmeeting_bubblechart .k-widget .k-scheduler-layout .k-event {
+		background-color: #f6f6f6;
+		border: 1px solid #e5e5e5;
+	}
+	#annualmeeting_bubblechart .k-scheduler-content,
+		#annualmeeting_bubblechart .k-scheduler-layout {
+		overflow: hidden !important;
+	}
+	#eventsHeading {
+		font-family: "Andes", sans-serif;
+		display: block;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		margin-top: 10px;
+	}
+	button.editMode {
+		display: none;
+	}
+	#bubbleChart .k-floatwrap {
+		display: none !important;
+	}
+	.k-scheduler, .k-scheduler-content, .k-scheduler-times {
+		height: auto !important;
+	}
+	#wb_banner {
+		display: none !important;
+	}
+	.k-event {
+		background-color: #fff5f5 !important;
+		-webkit-print-color-adjust: exact;
+	}
+	.k-floatwrap.k-header.k-scheduler-toolbar {
+		display: none;
+	}
+	.k-header.k-scheduler-footer {
+		display: none;
+	}
+	#annualmeeting_bubblechart .k-widget table.k-scheduler-table tbody tr th
+		{
+		font-family: "Andes", sans-serif;
+	}
+}

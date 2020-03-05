@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Dropdown Dialog"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/foundation/container">
+		<layout jcr:primaryType="nt:unstructured"
+			sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+			type="nav" />
+		<items jcr:primaryType="nt:unstructured">
+			<component-style jcr:primaryType="nt:unstructured"
+				jcr:title="Component Style"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<dropdown-type jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/select"
+								fieldLabel="Dropdown Type" name="./dropdownType"
+								class="cq-dialog-tab-showhide"
+								cq-dialog-tab-showhide-target=".tab-showhide-target">
+								<items jcr:primaryType="nt:unstructured">
+									<default jcr:primaryType="nt:unstructured"
+										text="(default)" value="" />
+									<reference jcr:primaryType="nt:unstructured"
+										text="Reference" value="reference" />
+									<auto-pull jcr:primaryType="nt:unstructured"
+										text="Auto Pull" value="auto-pull" />
+									<manual jcr:primaryType="nt:unstructured" text="Manual"
+										value="manual" />
+								</items>
+							</dropdown-type>
+							<reference-container
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/container"
+								class="hide tab-showhide-target reference">
+								<items jcr:primaryType="nt:unstructured">
+									<dropdown-reference
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+										fieldLabel="Dropdown Reference" name="./dropdownReference"
+										predicate="nosystem" rootPath="/content" />
+								</items>
+							</reference-container>
+							<label jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Label" name="./label" />
+							<placeholder jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Placeholder" name="./placeholder" />
+							<is-navigate jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/checkbox"
+								text="Is Navigation" name="./isNavigation" value="true" />
+							<id jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Dropdown ID" name="./id" />
+							<dropdown jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/select"
+								fieldLabel="Dynamic Dropdown">
+								<datasource jcr:primaryType="nt:unstructured"
+									sling:resourceType="/apps/dropdown/datasource" />
+							</dropdown>
+						</items>
+					</column>
+				</items>
+			</component-style>
+			<auto-pull jcr:primaryType="nt:unstructured"
+				jcr:title="Auto Pull"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<layoutConfig
+					class="hide tab-showhide-target auto-pull" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<site jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/select"
+								fieldLabel="Site" name="./site">
+								<items jcr:primaryType="nt:unstructured">
+									<default jcr:primaryType="nt:unstructured"
+										text="(default)" value="" />
+									<wbl-sites jcr:primaryType="nt:unstructured"
+										text="Women, Business and the Law | Procuring Infrastructure Public-Private Partnerships"
+										value="wbl" />
+									<db-site jcr:primaryType="nt:unstructured"
+										text="Doing Business" value="doingbusiness" />
+								</items>
+							</site>
+							<api jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="API" name="./api" />
+							<key jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Key" name="./key" />
+							<value jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Value" name="./value" />
+							<content-path jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+								fieldLabel="Content Path" name="./contentPath"
+								rootPath="/content" />
+							<link-as-selector
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/checkbox"
+								text="Link As Selector" name="./linkAsSelector" value="true" />
+							<create-pages jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/checkbox"
+								text="Create Pages" name="./createPages" value="true" />
+						</items>
+					</column>
+				</items>
+			</auto-pull>
+			<manual jcr:primaryType="nt:unstructured" jcr:title="Manual"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<layoutConfig class="hide tab-showhide-target manual" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<dropdown-items jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/multifield"
+								class="full-width"
+								fieldDescription="Click 'Add field' to add a page title and links"
+								fieldLabel="Dropdown Items">
+								<field jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/fieldset"
+									acs-commons-nested="JSON_STORE" name="./manualItems">
+									<layout jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+										method="absolute" />
+									<items jcr:primaryType="nt:unstructured">
+										<column jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/foundation/container">
+											<items jcr:primaryType="nt:unstructured">
+												<title jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/form/textfield"
+													fieldLabel="Page Title" name="./title" />
+												<link jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+													fieldLabel="Page Path" name="./link" rootPath="/content" />
+											</items>
+										</column>
+									</items>
+								</field>
+							</dropdown-items>
+						</items>
+					</column>
+				</items>
+			</manual>
+		</items>
+	</content>
+</jcr:root>

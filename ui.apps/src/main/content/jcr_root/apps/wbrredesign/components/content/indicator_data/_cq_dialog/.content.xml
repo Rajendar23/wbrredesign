@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Indicator Data Dialog"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/foundation/container">
+		<layout jcr:primaryType="nt:unstructured"
+			sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+			type="nav" />
+		<items jcr:primaryType="nt:unstructured">
+			<component jcr:primaryType="nt:unstructured"
+				jcr:title="Tab"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<site jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/select"
+								fieldLabel="Site" name="./site">
+								<items jcr:primaryType="nt:unstructured">
+									<default jcr:primaryType="nt:unstructured"
+										text="(default)" value="" />
+									<wbl-sites jcr:primaryType="nt:unstructured"
+										text="Women, Business and the Law | Procuring Infrastructure Public-Private Partnerships"
+										value="wbl" />
+									<db-site jcr:primaryType="nt:unstructured"
+										text="Doing Business" value="doingbusiness" />
+								</items>
+							</site>
+							<api jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="API" name="./api" />
+							<id jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Table ID" name="./id" />
+							<table-labels jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/multifield"
+								class="full-width"
+								fieldDescription="Click 'Add field' to labels of the table"
+								fieldLabel="Table Labels">
+								<field jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/fieldset"
+									acs-commons-nested="JSON_STORE" name="./tableLabels">
+									<layout jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+										method="absolute" />
+									<items jcr:primaryType="nt:unstructured">
+										<column jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/foundation/container">
+											<items jcr:primaryType="nt:unstructured">
+												<title jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/form/textfield"
+													fieldLabel="Label" name="./label" />
+											</items>
+										</column>
+									</items>
+								</field>
+							</table-labels>
+						</items>
+					</column>
+				</items>
+			</component>
+		</items>
+	</content>
+</jcr:root>

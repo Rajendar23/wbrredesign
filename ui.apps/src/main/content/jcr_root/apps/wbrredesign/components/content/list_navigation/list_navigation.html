@@ -1,0 +1,33 @@
+<sly
+	data-sly-use.listNavigation="org.worldbank.wbrredesign.core.models.ListNavigation">
+<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+	class="cq-placeholder cq-marker-start" data-emptytext="List Navigaiton"></div>
+<div class="row"> 
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+		<sly
+			data-sly-list.navList="${listNavigation.listnavitems.listChildren}"
+			data-sly-unwrap>
+		<div class="_loop_list_navigation section">
+			<div class="${listNavigation.aspectRatio}"
+				data-sly-test="${navList.imagePath}">
+				<a data-sly-test="${navList.readMore}" href="${navList.readMore}"><img
+					src="${navList.imagePath}" title="image" alt="image"></a> <img
+					data-sly-test="${navList.readMore == null}"
+					src="${navList.imagePath}" title="image" alt="image">
+			</div>
+			<div class="_loop_list_nav_content">
+				<h4>${navList.title}</h4>
+				<div class="hammer">${navList.subTitle}</div>
+				<sly data-sly-text="${navList.descriptionText @ context='html' }" />
+				<div class="_list_link"
+					data-sly-list.relatedLinks="${navList.listChildren}">
+					<sly data-sly-list.links="${relatedLinks.listChildren}"> <a
+						href="${links.link}" class="view-all">${links.title}</a> <span></span>
+					</sly>
+				</div>
+			</div>
+		</div>
+		</sly>
+	</div>
+</div>
+</sly>

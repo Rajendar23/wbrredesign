@@ -1,0 +1,19 @@
+<sly
+	data-sly-use.indicatorData="org.worldbank.wbrredesign.core.models.IndicatorData" />
+
+<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+	class="cq-placeholder cq-marker-start" data-emptytext="Indicator Data"></div>
+
+<div
+	class="c14v1-body c14v1-body-text table-head-inverse responsive-table economy-table">
+	<div class="paragraph table nosort">
+		<table class="">
+			<tr>
+				<th>Question</th>
+			</tr>
+			<tr data-sly-repeat="${indicatorData.indicatorsData}">
+				<td>${item}</td>
+			</tr>
+		</table>
+	</div>
+</div>

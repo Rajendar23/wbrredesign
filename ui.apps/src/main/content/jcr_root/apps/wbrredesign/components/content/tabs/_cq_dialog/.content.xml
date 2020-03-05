@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Tabs Dialog"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/foundation/container">
+		<layout jcr:primaryType="nt:unstructured"
+			sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+			type="nav" />
+		<items jcr:primaryType="nt:unstructured">
+			<component-style jcr:primaryType="nt:unstructured"
+				jcr:title="Component Style"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<tabs-in jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/select"
+								fieldLabel="Tabs In" name="./tabsIn" required="{Boolean}true"
+								class="cq-dialog-tab-showhide"
+								cq-dialog-tab-showhide-target=".tab-showhide-target">
+								<items jcr:primaryType="nt:unstructured">
+									<default jcr:primaryType="nt:unstructured"
+										text="(default)" value="" />
+									<autopull jcr:primaryType="nt:unstructured"
+										text="Auto Pull" value="autopull" />
+									<manual jcr:primaryType="nt:unstructured" text="Manual"
+										value="manual" />
+								</items>
+							</tabs-in>
+							<tabs-as-dropdown
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/checkbox"
+								text="Tabs As Dropdown" name="./tabsAsDropdown" value="true" />
+							<autopull-container
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/container"
+								class="hide tab-showhide-target autopull">
+								<items jcr:primaryType="nt:unstructured">
+									<tabs-path jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+										fieldLabel="Tabs Path" name="./tabsPath" predicate="nosystem"
+										rootPath="/content" />
+								</items>
+							</autopull-container>
+							<manual-container
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/container"
+								class="hide tab-showhide-target manual">
+								<items jcr:primaryType="nt:unstructured">
+									<list jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+										composite="{Boolean}true"
+										fieldDescription="Click '+' to add a new link"
+										fieldLabel="List">
+										<field jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/container"
+											name="./list">
+											<items jcr:primaryType="nt:unstructured"
+												acs-commons-nested="">
+												<page-title jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+													fieldLabel="Page Title" name="./pageTitle" />
+												<page-name jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+													fieldLabel="Page Name" name="./pageName" />
+											</items>
+										</field>
+									</list>
+									<usersubmenudetails
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/multifield"
+										class="full-width"
+										fieldDescription="Click 'Add field' to add a new User Submenu title and links"
+										fieldLabel="User Submenu Items">
+										<field jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/foundation/form/fieldset"
+											acs-commons-nested="JSON_STORE" name="./myUserSubmenu">
+											<layout jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+												method="absolute" />
+											<items jcr:primaryType="nt:unstructured">
+												<column jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container">
+													<items jcr:primaryType="nt:unstructured">
+														<title jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/textfield"
+															fieldDescription="Enter User Submenu title"
+															fieldLabel="User Submenu Title" name="./title" />
+														<link jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+															fieldDescription="Enter User Submenu Link"
+															fieldLabel="User Submenu Link" name="./link"
+															rootPath="/content" />
+														<flag jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/checkbox"
+															checked="{Boolean}false"
+															fieldDescription="Testing Flag for checkbox"
+															name="./flag" text="Flag" title="Checkbox Tooltip" />
+													</items>
+												</column>
+											</items>
+										</field>
+									</usersubmenudetails>
+								</items>
+							</manual-container>
+						</items>
+					</column>
+				</items>
+			</component-style>
+		</items>
+	</content>
+</jcr:root>

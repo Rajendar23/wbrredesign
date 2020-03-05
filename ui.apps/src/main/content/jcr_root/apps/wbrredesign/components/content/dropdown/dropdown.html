@@ -1,0 +1,28 @@
+<sly
+	data-sly-use.dropdown="org.worldbank.wbrredesign.core.models.Dropdown" />
+
+<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+	class="cq-placeholder cq-marker-start" data-emptytext="Dropdown"></div>
+
+<div class="dropdown-v2-seciton">
+	<div class="lable">${dropdown.label}</div>
+	<div class="btn-group dropdown-group dropdown-group-inverse">
+		<button class="dropdown-select-item dropdown-toggle"
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<span class="filter-option">${dropdown.placeholder @ i18n}</span><span
+				class="dropdwon-arrow"></span>
+		</button>
+		<ul class="dropdown-menu dropdown-item" id="${dropdown.id}"
+			data-sly-use.drop="dropdown.js"
+			data-sly-attribute.code="${drop.code}">
+			<li data-sly-repeat="${dropdown.dropdownItems}"><a
+				data-sly-test="${!dropdown.isNavigation}"
+				data-sly-attribute.id="${item['selector']}"
+				data-sly-attribute.selector="${dropdown.pageSelector}">${item['title']}</a><a
+				data-sly-test="${dropdown.isNavigation}"
+				data-sly-attribute.id="${item['selector']}"
+				data-sly-attribute.selector="${dropdown.pageSelector}"
+				href="${item['link'] @ extension = 'html', selectors=item['selector']}">${item['title']}</a></li>
+		</ul>
+	</div>
+</div>
