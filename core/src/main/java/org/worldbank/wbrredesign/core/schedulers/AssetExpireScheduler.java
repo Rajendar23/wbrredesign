@@ -46,7 +46,7 @@ public class AssetExpireScheduler implements Runnable {
 		removeScheduler();
 	}
 
-	@ObjectClassDefinition(name = "Asset Expire Scheduler")
+	@ObjectClassDefinition(name = "Asset Expiration Scheduler")
 	public static @interface Configuration {
 		@AttributeDefinition(name = "Enable", description = "Enable the configuration", type = AttributeType.BOOLEAN)
 		boolean enabled() default true;
